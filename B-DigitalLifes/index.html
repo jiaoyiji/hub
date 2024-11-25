@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/allPage.css" />
+	</head>
+	<style type="text/css">
+	.mui-bar-tab .mui-tab-item.mui-active {
+	    color: #333;
+	}
+	</style>
+	<body>
+		<div class="mui-content">
+			
+		</div>
+		<footer>
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item mui-active" style="color: #612011;">
+					<span class="mui-icon mui-icon-home" id="first"></span>
+					<span class="mui-tab-label">首页</span>
+				</a>
+				<a class="mui-tab-item mui-active">
+					<span class="mui-icon mui-icon-phone" id="tree"></span>
+					<span class="mui-tab-label">种树</span>
+				</a>
+				<a class="mui-tab-item mui-active" id="tribe">
+					<span class="mui-icon mui-icon-phone"></span>
+					<span class="mui-tab-label">部落</span>
+				</a>
+				<a class="mui-tab-item mui-active">
+					<span class="mui-icon mui-icon-email" id="mine"></span>
+					<span class="mui-tab-label">我的</span>
+				</a>
+			</nav>
+		</footer>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/* document.addEventListener('plusready', function(){
+			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。")
+			
+		}); */
+			mui.init({
+				subpages: [{
+					url: 'sonPage/tree.html',
+					id: 'tree',
+					styles: {
+						top: '0px', // mui标题栏默认高度为45px；
+						bottom: '50px' // 默认为0px，可不定义；
+					}
+				}, {
+					url: 'sonPage/tribe.html',
+					id: 'tribe',
+					styles: {
+						top: '0px', // mui标题栏默认高度为45px；
+						bottom: '50px' // 默认为0px，可不定义；
+					}
+				}, {
+					url: 'sonPage/mine.html',
+					id: 'mine',
+					styles: {
+						top: '0px', // mui标题栏默认高度为45px；
+						bottom: '50px' // 默认为0px，可不定义；
+					}
+				}, {
+					url: 'sonPage/first.html',
+					id: 'first',
+					styles: {
+						top: '0px', // mui标题栏默认高度为45px；
+						bottom: '50px' // 默认为0px，可不定义；
+					}
+				}]
+			});
+			mui.plusReady(function() {
+				function openNewPage(url, id, aniShow,position) {
+					mui.openWindow({
+						id: id,
+						url: url,
+						styles: {
+							top: '0px', // mui标题栏默认高度为45px；
+							bottom: '0px', // 默认为0px，可不定义；
+							popGesture: 'none' // 禁用滑动手势关闭页面
+						},
+						extras: {
+							// 自定义参数
+						},
+						createNew: true, // 如果页面已经存在，则重新创建
+						show: {
+							autoShow: true, // 页面创建好后自动显示, 默认为true
+							aniShow: aniShow, // 自定义动画效果
+							duration: 600 // 动画持续时间
+						},
+						waiting: {
+							autoShow: false // 关闭等待提示框
+						}
+					});
+				}
+
+				$('#first').on('tap', function() {
+					openNewPage('sonPage/first.html','game','fade-in',)
+
+				});
+
+				$('#tree').on('tap', function() {
+					openNewPage('sonPage/tree.html','tree','fade-in',)
+
+				});
+
+				$('#tribe').on('tap', function() {
+					openNewPage('sonPage/tribe.html','tribe','fade-in',)
+
+				});
+
+				$('#mine').on('tap', function() {
+					openNewPage('sonPage/mine.html','mine','fade-in',)
+				});
+		})
+		</script>
+	</body>
+</html>
